@@ -1,0 +1,9 @@
+{
+  "h1": "A simple example FR",
+  "change-locale": "Change locale FR",
+  "to-second-page": "To second page FR",
+  "error-with-status": "A {{statusCode}} error occurred on server FR",
+  "error-without-status": "An error occurred on the server FR",
+  "title": "Home | next-i18next FR",
+  "email": "Email"
+}

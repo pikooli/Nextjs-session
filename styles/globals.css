@@ -1,3 +1,17 @@
+:root {
+  --color1: #14279b;
+  --color2: #3d56b2;
+  --color3: #5c7aea;
+  --color4: #77acf1;
+  --colorConversation1: #c9f5df;
+  --colorConversation2: #a6c6f0;
+  --colorBtn: #478de9;
+  --colorBtn2: #77acf1;
+  --colortext: #e6e6e6;
+  --colorLink: white;
+  --colorLinkHover: rgb(233, 233, 233);
+}
+
 html,
 body {
   padding: 0;

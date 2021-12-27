@@ -2,26 +2,27 @@
 import {
   GetServerSidePropsContext,
   GetServerSidePropsResult,
-  NextApiHandler,
-} from "next";
-import type { IronSessionOptions } from "iron-session";
-import { withIronSessionSsr, withIronSessionApiRoute } from "iron-session/next";
-import type { User } from "utils/types";
-
-export const sessionOptions: IronSessionOptions = {
-  password: process.env.SECRET_COOKIE_PASSWORD as string,
-  cookieName: "youngdoc",
-  cookieOptions: {
-    secure: process.env.NODE_ENV === "production",
-  },
-};
+  NextApiHandler
+} from 'next';
+import type { IronSessionOptions } from 'iron-session';
+import { withIronSessionSsr, withIronSessionApiRoute } from 'iron-session/next';
+import type { User } from 'utils/types';
 
 // This is where we specify the typings of req.session.*
-declare module "iron-session" {
+declare module 'iron-session' {
   interface IronSessionData {
     user?: User;
   }
 }
+
+export const sessionOptions: IronSessionOptions = {
+  password: process.env.SECRET_COOKIE_PASSWORD as string,
+  cookieName: 'youngdoc',
+  cookieOptions: {
+    secure: process.env.NODE_ENV === 'production'
+  }
+};
+
 // this if for the api router
 export function withSessionRoute(handler: NextApiHandler) {
   return withIronSessionApiRoute(handler, sessionOptions);

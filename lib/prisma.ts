@@ -1,5 +1,5 @@
 // lib/prisma.ts
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from '@prisma/client';
 
 declare global {
   namespace NodeJS {
@@ -9,12 +9,16 @@ declare global {
   }
 }
 
+const options: Prisma.PrismaClientOptions = {
+  // log: ["query", "info", "warn", "error"],
+};
+
 let prisma: PrismaClient;
-if (process.env.NODE_ENV === "production") {
-  prisma = new PrismaClient();
+if (process.env.NODE_ENV === 'production') {
+  prisma = new PrismaClient(options);
 } else {
   if (!global.prisma) {
-    global.prisma = new PrismaClient();
+    global.prisma = new PrismaClient(options);
   }
   prisma = global.prisma;
 }

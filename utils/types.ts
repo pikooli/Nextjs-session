@@ -1,8 +1,13 @@
 export interface User {
   id: number;
+  firstname: string | null;
+  lastname: string | null;
   email: string;
   password: string;
-  name: string | null;
   // createAt: Date;
   // updateAt: Date;
+}
+
+export interface Obj {
+  [key: string]: any;
 }

@@ -1,8 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { useEffect } from 'react';
+import type { AppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+import '../styles/globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default MyApp
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    import('bootstrap/dist/js/bootstrap.bundle.min' as string);
+  }, []);
+
+  return <Component {...pageProps} />;
+};
+
+export default appWithTranslation(MyApp);
