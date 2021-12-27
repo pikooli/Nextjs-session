@@ -6,4 +6,6 @@ You need to put in ".env" :
 
 It a testing project.
 
+This project you to create a user and log in with it.
+
 !!!!!!!! On Going !!!!!!!!!!
